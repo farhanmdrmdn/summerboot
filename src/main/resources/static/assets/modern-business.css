@@ -1,0 +1,265 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template/modern-business)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+
+/* ------index Page------- */
+
+body {
+    padding-top: 56px;
+}
+
+.carousel-item {
+    height: 75vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.portfolio-item {
+    margin-bottom: 30px;
+} 
+
+.jumbotron_shopall {
+    background-image: url("img/shopall_banner.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 390px;
+}
+
+.calltoaction {
+  padding-top: 40px;
+}
+
+/* ------Cart Page------- */
+
+.cartheader {
+    padding-top: 30px;
+}
+
+.jumbotron_cart {
+  background-image: url("img/shoppingcartbanner.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 380px;
+}
+
+.products-container {
+    max width: 650px;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+}
+
+.product-header {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 4px solid lightgrey;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.product {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 4px solid lightgrey;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.productsIncart {
+  display: flexbox;
+  width: 100%;
+}
+
+.cartClass ion-icon {
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.productsCart {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cartClass {
+  display: flex;
+  padding-top: 20px;
+}
+
+.product-title {
+    width: 50%
+    
+}
+
+.price {
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+
+.priceCart {
+  width: 15%;
+  display: flex;
+  align-items: center;
+}
+
+.quantity {
+    width: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.quantityCart {
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.total {
+    width: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.totalCart {
+    width: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.p3 {
+  width: 30%
+}
+
+.basketTotal {
+  padding-left: 50px;
+}
+
+.basketTotalContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-top: 60px;
+}
+
+.checkOut {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+
+.emptyBasket {
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.basketEmptyTitle {
+  padding-bottom: 30px;
+}
+
+.add-cart {
+  color:white;
+  background-color: black;
+  border: 0;
+}
+
+/* ------Checkout Success------- */
+
+.checkout_success_body {
+  display: inline-block;
+  padding-top: 15px;
+}
+
+.checkout_success_btn {
+  background-color:black;
+  border: 0;
+  display: flex;
+  margin-top: 120px;
+  margin-left: 370px;
+  
+}
+
+/* ------FAQ------- */
+.collapsible {
+  display:flex;
+  background-color:black;
+  color:white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.faqcontent {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+}
+
+
+/*-------Footer--------*/
+
+.footer{
+  background-color:#f6f6f6;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  font-size: x-small;
+}
+
+.footer_one{
+  padding-left: 50px;
+}
+
+.footer-2 {
+  padding-right: 50px;
+}
+
+.footer-3 {
+  padding-right: 50px;
+  padding-top: 25px;
+}
+
+.footerlink {
+  padding-top:10px;
+  color:black;
+}
+
+.padding-top {
+  padding-top: 50px;
+}
+
+#signinpaddingtop {
+  padding-top: 60px;
+}
+

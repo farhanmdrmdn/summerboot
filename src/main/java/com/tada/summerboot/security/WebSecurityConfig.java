@@ -19,6 +19,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		//DO NOT EDIT
 		//do not authenticate these APIs
 		web.ignoring()
+				.antMatchers("/assets/**")
+				.antMatchers("/**")
+
 				.antMatchers("/products/**")
 				.antMatchers("/posts/**")
 				.antMatchers("/products/json/**") //is this necessary?
@@ -28,16 +31,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		//DO NOT EDIT
 		http
-			.authorizeRequests()
+				.authorizeRequests()
 				.antMatchers("/").permitAll()
 				.antMatchers("/product").hasRole("ADMIN")
 				.anyRequest().authenticated()
 				.and()
-			.formLogin()
+				.formLogin()
 				.loginPage("/login")
 				.permitAll()
 				.and()
-			.logout()
+				.logout()
 				.permitAll();
 	}
 
@@ -45,11 +48,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	public UserDetailsService userDetailsService() {
 		UserDetails user =
-			 User.withDefaultPasswordEncoder()
-				.username("admin")
-				.password("admin")
-				.roles("ADMIN")
-				.build();
+				User.withDefaultPasswordEncoder()
+						.username("admin")
+						.password("admin")
+						.roles("ADMIN")
+						.build();
 
 		return new InMemoryUserDetailsManager(user);
 	}
