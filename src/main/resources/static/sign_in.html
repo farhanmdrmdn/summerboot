@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
   <head>
     <meta charset="utf-8" />
     <meta
@@ -87,16 +89,22 @@
         <div class="col-sm-6" style="padding-top: 70px;">
           <h3 style="text-shadow: 1px 1px 1px grey;">Sign in</h3>
           <hr>
-          <form name="signin_form" id="signin_form" novalidate>
+          <div th:if="${param.error}">
+            Invalid username and password.
+          </div>
+          <div th:if="${param.logout}">
+            You have been logged out.
+          </div>
+          <form name="signin_form" id="signin_form" th:action="@{/login}" method="post">
             <div class="control-group form-group">
                 <div class="controls">
-                  <label>Email:</label>
-                  <input
-                    type="email"
+                  <label>Username:</label>
+                  <input                     type="text"
+                                             name="username"
                     class="form-control"
-                    id="email"
+                    id="username"
                     required
-                    data-validation-required-message="Please enter your email address."
+                    data-validation-required-message="Please enter your username."
                   />
                 </div>
               </div>
@@ -105,6 +113,7 @@
                 <label>Password:</label>
                 <input
                   type="password"
+                  name="password"
                   class="form-control"
                   id="password"
                   required
@@ -116,6 +125,7 @@
             <!-- For success/fail messages -->
             <button
               type="submit"
+              value="Sign In"
               class="btn btn-primary"
               id="sendMessageButton" style="background-color: black; border: 0;"
             >
