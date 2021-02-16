@@ -1,6 +1,5 @@
 package com.tada.summerboot.controller;
 
-import com.tada.summerboot.model.Product;
 import com.tada.summerboot.model.User;
 import com.tada.summerboot.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,14 +17,16 @@ public class UserController {
 
     @PostMapping(path="/user/new")
     public String newUser(User newUser) {
+        System.out.println(newUser);
         user_service_implementation.createUser(newUser);
+        System.out.println("DID IT REACH HERE????");
         return "redirect:/every-users";
     }
 
     @GetMapping(path="/login")
     public String login(Model model) {
         // if it is already login, redirect to the main page
-        return "login";
+        return "sign_in";
         // if it is not login, show login
     }
 

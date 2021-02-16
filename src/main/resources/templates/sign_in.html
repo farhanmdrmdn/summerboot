@@ -11,7 +11,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Register</title>
+    <title>Sign in</title>
 
     <!-- Bootstrap core CSS -->
     <link
@@ -30,7 +30,7 @@
       class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top"
     >
       <div class="container">
-        <a class="navbar-brand" href="index1.html">
+        <a class="navbar-brand" href="index.html">
           <img src="assets/img/logo.png" height="80" />
         </a>
         <button
@@ -56,7 +56,7 @@
               <a class="nav-link" href="/login">Sign in</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="register.html">Register</a>
+              <a class="nav-link" href="registerX.html">Register</a>
             </li>
             <li class="cart">
               <a class="nav-link" href="shopping_cart.html">
@@ -81,97 +81,65 @@
 
     <!-- Page Content -->
     <div class="container">
-      <!-- Registration Form -->
+      <!-- Contact Form -->
+      <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
       <div class="row" id="signinpaddingtop">
         <div class="col-sm-6">
-            <img class="img-fluid" src="assets/img/registerbanner.jpeg" height="400" style="padding-bottom: 10px;">
+            <img class="img-fluid" src="assets/img/signin_banner.jpg" height="400" style="padding-bottom: 10px;">
         </div>
         <div class="col-sm-6" style="padding-top: 70px;">
-          <h3 style="text-shadow: 1px 1px 1px grey;">Register</h3>
+          <h3 style="text-shadow: 1px 1px 1px grey;">Sign in</h3>
           <hr>
+          <div th:if="${param.error}">
+            Invalid username and password.
+          </div>
+          <div th:if="${param.logout}">
+            You have been logged out.
+          </div>
+          <form name="signin_form" id="signin_form" th:action="@{/login}" method="POST">
+            <div class="control-group form-group">
+                <div class="controls">
+                  <label>User Name:</label>
+                  <input                     type="text"
+                                             name="username"
+                    class="form-control"
+                    id="username"
+                    required
+                    data-validation-required-message="Please enter your username."
+                  />
+                </div>
+              </div>
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>Password:</label>
+                <input
+                  type="password"
+                  name="password"
+                  class="form-control"
+                  id="password"
+                  required
+                  data-validation-required-message="Please enter your password."
+                />
+              </div>
+            </div>
+            <div id="success"></div>
+            <!-- For success/fail messages -->
+<!--            <button-->
+<!--              type="submit"-->
+<!--              value="Sign In"-->
+<!--              class="btn btn-primary"-->
+<!--              id="sendMessageButton" style="background-color: black; border: 0;"-->
+<!--            >-->
+<!--              Log in-->
+<!--            </button>-->
 
-          <form th:action="@{/user/new}" th:object="${user}" method="POST">
-            <div><label> Name: <input type="text" th:field="*{username}" name="username"/> </label></div>
-            <div><label> Email: <input type="text" th:field="*{email}" name="email"/> </label></div>
-            <div><label> Password: <input type="password" th:field="*{password}" name="password"/> </label></div>
-            <div><label> Retype Password: <input type="password" name="retype_password"/> </label></div>
-            <input type="hidden" th:value="user" th:attr="name='userType'"/>
-
-            <div><input type="submit" value="New User"/></div>
+            <input type="submit"  class="btn btn-primary" value="Sign In" style="background-color: black; border: 0">
           </form>
-
-<!--          <form name="register_form" id="register_form" th:action="@{/user/new}" th:object="${user}" method="POST">-->
-<!--            <div class="control-group form-group">-->
-<!--              <div class="controls">-->
-<!--                <label>User Name:</label>-->
-<!--                <input-->
-<!--                        type="text"-->
-<!--                        th:field="*{username}"-->
-<!--                        name="username"-->
-<!--                        class="form-control"-->
-<!--                        id="username"-->
-<!--                        required-->
-<!--                        data-validation-required-message="Please enter your email address."-->
-<!--                />-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="control-group form-group">-->
-<!--                <div class="controls">-->
-<!--                  <label>Email:</label>-->
-<!--                  <input-->
-<!--                    type="text"-->
-<!--                    th:field="*{email}"-->
-<!--                    name="email"-->
-<!--                    class="form-control"-->
-<!--                    id="email"-->
-<!--                    required-->
-<!--                    data-validation-required-message="Please enter your email address."-->
-<!--                  />-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            <div class="control-group form-group">-->
-<!--              <div class="controls">-->
-<!--                <label>Password:</label>-->
-<!--                <input-->
-<!--                  type="password"-->
-<!--                  th:field="*{password}"-->
-<!--                  name="password"-->
-<!--                  class="form-control"-->
-<!--                  id="password"-->
-<!--                  required-->
-<!--                  data-validation-required-message="Please enter your password."-->
-<!--                />-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="control-group form-group">-->
-<!--              <div class="controls">-->
-<!--                <label>Confirm Password:</label>-->
-<!--                <input-->
-<!--                  type="password"-->
-<!--                  name="retype_password"-->
-<!--                  class="form-control"-->
-<!--                  id="confirm_password"-->
-<!--                  required-->
-<!--                  data-validation-required-message="Please enter your password."-->
-<!--                />-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div id="success"></div>-->
-<!--            &lt;!&ndash; For success/fail messages &ndash;&gt;-->
-<!--            <input type="hidden" th:value="user" th:attr="name='userType'"/>-->
-<!--&lt;!&ndash;            <button &ndash;&gt;-->
-<!--&lt;!&ndash;              type="submit"&ndash;&gt;-->
-<!--&lt;!&ndash;              class="btn btn-primary"&ndash;&gt;-->
-<!--&lt;!&ndash;              id="sendMessageButton" style="background-color: black; border: 0;"&ndash;&gt;-->
-<!--&lt;!&ndash;            >&ndash;&gt;-->
-<!--&lt;!&ndash;              Register&ndash;&gt;-->
-<!--&lt;!&ndash;            </button>&ndash;&gt;-->
-<!--            <input type="submit" value="Register" class="btn btn-primary" style="background-color: black; border: 0"/>-->
-
-<!--          </form>-->
         </div>
       </div>
+      <!-- /.row -->
     </div>
+    <!-- /.container -->
 
     <!-- Footer -->
     <footer class="footer">
@@ -246,7 +214,7 @@
         </div>
       </div>
     </footer>
-
+    
     <!-- Bootstrap core JavaScript -->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -254,6 +222,6 @@
     <!-- Contact form JavaScript -->
     <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
     <script src="assets/jqBootstrapValidation.js"></script>
-<!--    <script src="assets/contact_me.js"></script>-->
+    <script src="assets/contact_me.js"></script>
   </body>
 </html>

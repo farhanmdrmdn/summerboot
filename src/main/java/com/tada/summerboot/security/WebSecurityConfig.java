@@ -32,9 +32,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configure(WebSecurity web) {
 		// DO NOT EDIT
 		// do not authenticate these APIs
-		web.ignoring().antMatchers("/assets/**").antMatchers("/**")
+		web.ignoring()
+				.antMatchers("/assets/**")
+				.antMatchers("/register")
 
-				.antMatchers("/css/**").antMatchers("/js/**").antMatchers("/images/**")
+				.antMatchers("/css/**")
+				.antMatchers("/js/**")
+				.antMatchers("/images/**")
 
 				.antMatchers("/user-photos/**").antMatchers("/products/**").antMatchers("/posts/**")
 				.antMatchers("/products/json/**") // is this necessary?
