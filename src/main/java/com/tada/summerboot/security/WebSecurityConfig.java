@@ -40,7 +40,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/js/**")
 				.antMatchers("/images/**")
 
-				.antMatchers("/user-photos/**").antMatchers("/products/**").antMatchers("/posts/**")
+				.antMatchers("/user-photos/**")
+				.antMatchers("/products/**")
+				.antMatchers("/posts/**")
 				.antMatchers("/products/json/**") // is this necessary?
 				.antMatchers("/users/**");
 	}
