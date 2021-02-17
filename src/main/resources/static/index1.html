@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head>
   <meta charset="utf-8" />
@@ -39,7 +40,7 @@
             <a class="nav-link" href="shop_all.html">Shop All</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/login">Sign in</a>
+            <div th:insert="fragments/login.html :: login"> </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="register.html">Register</a>
@@ -334,7 +335,7 @@
         </div>
       </div>
     </footer>
-    
+
   <!-- Bootstrap core JavaScript -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

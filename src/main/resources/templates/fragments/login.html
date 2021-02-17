@@ -9,20 +9,37 @@
 <body>
 
     <div th:fragment="login">
-        <div sec:authorize="isAuthenticated()">
-            <h4 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h4>
 
+        <div sec:authorize="isAuthenticated()">
+<!--            <h4 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h4>-->
             <form th:action="@{/logout}" method="post">
-                <input type="submit" value="Sign Out"/>
+                <input type="submit" value="Sign Out" class="nav-link" style="background-color: transparent; border: 0px;"/>
             </form>
         </div>
 
 
         <div sec:authorize="isAnonymous()">
-            <p>Not logged in <br>
-                <a href="/login">try logging in</a>
-            </p>
+            <a class="nav-link" href="/login">Sign in</a>
         </div>
+
+<!--        <div sec:authorize="isAnonymous()">-->
+<!--            <a class="nav-link" href="/login">Sign in</a>-->
+<!--        </div>-->
+<!--        -->
+<!--        <div sec:authorize="isAuthenticated()">-->
+<!--            <h4 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h4>-->
+
+<!--            <form th:action="@{/logout}" method="post">-->
+<!--                <input type="submit" value="Sign Out"/>-->
+<!--            </form>-->
+<!--        </div>-->
+
+
+<!--        <div sec:authorize="isAnonymous()">-->
+<!--            <p>Not logged in <br>-->
+<!--                <a href="/login">try logging in</a>-->
+<!--            </p>-->
+<!--        </div>-->
 
     </div>
 </body>

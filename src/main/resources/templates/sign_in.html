@@ -53,7 +53,7 @@
               <a class="nav-link" href="shop_all.html">Shop All</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/login">Sign in</a>
+              <div th:insert="fragments/login.html :: login"> </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="registerX.html">Register</a>
@@ -214,7 +214,8 @@
         </div>
       </div>
     </footer>
-    
+
+
     <!-- Bootstrap core JavaScript -->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
