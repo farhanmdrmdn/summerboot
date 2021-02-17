@@ -90,85 +90,85 @@
           <h3 style="text-shadow: 1px 1px 1px grey;">Register</h3>
           <hr>
 
-          <form th:action="@{/user/new}" th:object="${user}" method="POST">
-            <div><label> Name: <input type="text" th:field="*{username}" name="username"/> </label></div>
-            <div><label> Email: <input type="text" th:field="*{email}" name="email"/> </label></div>
-            <div><label> Password: <input type="password" th:field="*{password}" name="password"/> </label></div>
-            <div><label> Retype Password: <input type="password" name="retype_password"/> </label></div>
-            <input type="hidden" th:value="user" th:attr="name='userType'"/>
-
-            <div><input type="submit" value="New User"/></div>
-          </form>
-
-<!--          <form name="register_form" id="register_form" th:action="@{/user/new}" th:object="${user}" method="POST">-->
-<!--            <div class="control-group form-group">-->
-<!--              <div class="controls">-->
-<!--                <label>User Name:</label>-->
-<!--                <input-->
-<!--                        type="text"-->
-<!--                        th:field="*{username}"-->
-<!--                        name="username"-->
-<!--                        class="form-control"-->
-<!--                        id="username"-->
-<!--                        required-->
-<!--                        data-validation-required-message="Please enter your email address."-->
-<!--                />-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="control-group form-group">-->
-<!--                <div class="controls">-->
-<!--                  <label>Email:</label>-->
-<!--                  <input-->
-<!--                    type="text"-->
-<!--                    th:field="*{email}"-->
-<!--                    name="email"-->
-<!--                    class="form-control"-->
-<!--                    id="email"-->
-<!--                    required-->
-<!--                    data-validation-required-message="Please enter your email address."-->
-<!--                  />-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            <div class="control-group form-group">-->
-<!--              <div class="controls">-->
-<!--                <label>Password:</label>-->
-<!--                <input-->
-<!--                  type="password"-->
-<!--                  th:field="*{password}"-->
-<!--                  name="password"-->
-<!--                  class="form-control"-->
-<!--                  id="password"-->
-<!--                  required-->
-<!--                  data-validation-required-message="Please enter your password."-->
-<!--                />-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="control-group form-group">-->
-<!--              <div class="controls">-->
-<!--                <label>Confirm Password:</label>-->
-<!--                <input-->
-<!--                  type="password"-->
-<!--                  name="retype_password"-->
-<!--                  class="form-control"-->
-<!--                  id="confirm_password"-->
-<!--                  required-->
-<!--                  data-validation-required-message="Please enter your password."-->
-<!--                />-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div id="success"></div>-->
-<!--            &lt;!&ndash; For success/fail messages &ndash;&gt;-->
+<!--          <form th:action="@{/user/new}" th:object="${user}" method="POST">-->
+<!--            <div><label> Name: <input type="text" th:field="*{username}" name="username"/> </label></div>-->
+<!--            <div><label> Email: <input type="text" th:field="*{email}" name="email"/> </label></div>-->
+<!--            <div><label> Password: <input type="password" th:field="*{password}" name="password"/> </label></div>-->
+<!--            <div><label> Retype Password: <input type="password" name="retype_password"/> </label></div>-->
 <!--            <input type="hidden" th:value="user" th:attr="name='userType'"/>-->
-<!--&lt;!&ndash;            <button &ndash;&gt;-->
-<!--&lt;!&ndash;              type="submit"&ndash;&gt;-->
-<!--&lt;!&ndash;              class="btn btn-primary"&ndash;&gt;-->
-<!--&lt;!&ndash;              id="sendMessageButton" style="background-color: black; border: 0;"&ndash;&gt;-->
-<!--&lt;!&ndash;            >&ndash;&gt;-->
-<!--&lt;!&ndash;              Register&ndash;&gt;-->
-<!--&lt;!&ndash;            </button>&ndash;&gt;-->
-<!--            <input type="submit" value="Register" class="btn btn-primary" style="background-color: black; border: 0"/>-->
 
+<!--            <div><input type="submit" value="New User"/></div>-->
 <!--          </form>-->
+
+          <form name="register_form" id="register_form" th:action="@{/user/new}" th:object="${user}" method="POST">
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>User Name:</label>
+                <input
+                        type="text"
+                        th:field="*{username}"
+                        name="username"
+                        class="form-control"
+                        id="username"
+                        required
+                        data-validation-required-message="Please enter your email address."
+                />
+              </div>
+            </div>
+            <div class="control-group form-group">
+                <div class="controls">
+                  <label>Email:</label>
+                  <input
+                    type="text"
+                    th:field="*{email}"
+                    name="email"
+                    class="form-control"
+                    id="email"
+                    required
+                    data-validation-required-message="Please enter your email address."
+                  />
+                </div>
+              </div>
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>Password:</label>
+                <input
+                  type="password"
+                  th:field="*{password}"
+                  name="password"
+                  class="form-control"
+                  id="password"
+                  required
+                  data-validation-required-message="Please enter your password."
+                />
+              </div>
+            </div>
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>Confirm Password:</label>
+                <input
+                  type="password"
+                  name="retype_password"
+                  class="form-control"
+                  id="confirm_password"
+                  required
+                  data-validation-required-message="Please enter your password."
+                />
+              </div>
+            </div>
+            <div id="success"></div>
+            <!-- For success/fail messages -->
+            <input type="hidden" th:value="user" th:attr="name='userType'"/>
+<!--            <button -->
+<!--              type="submit"-->
+<!--              class="btn btn-primary"-->
+<!--              id="sendMessageButton" style="background-color: black; border: 0;"-->
+<!--            >-->
+<!--              Register-->
+<!--            </button>-->
+            <input type="submit" value="Register" class="btn btn-primary" style="background-color: black; border: 0"/>
+
+          </form>
         </div>
       </div>
     </div>
