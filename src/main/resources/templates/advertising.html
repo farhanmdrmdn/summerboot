@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Advertising</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="assets/modern-business.css" rel="stylesheet" />
+  <script src="assets/main.js"></script>
+</head>
+
+<body>
+  <!-- Navigation -->
+
+  <div th:insert="fragments/navbar.html :: navbar"> </div>
+
+  <!-- Page Content -->
+  <div class="container">
+    <!-- Registration Form -->
+    <div class="row" id="signinpaddingtop">
+      <div class="col-sm-6">
+        <img class="img-fluid" src="assets/img/advertising.jpeg" height="400" style="padding-bottom: 10px;">
+      </div>
+      <div class="col-sm-6" style="padding-top: 70px;">
+        <h3 style="text-shadow: 1px 1px 1px grey;">Advertising</h3>
+        <hr>
+        <p>
+          CDF is the ultimate lifestyle partner with unmatched global marketing power
+        </p>
+        <ul>
+          <li>1.9M + highly engaged email & push subscribers</li>
+          <li>
+          2.2M + social media followers across all platforms
+          </li>
+          <li>
+          7M + global site visits every month
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div th:insert="fragments/footer.html :: footer"> </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Contact form JavaScript -->
+  <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+  <script src="assets/jqBootstrapValidation.js"></script>
+  <script src="assets/contact_me.js"></script>
+</body>
+
+</html>

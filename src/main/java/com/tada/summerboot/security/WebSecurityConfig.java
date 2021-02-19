@@ -52,7 +52,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 				.antMatchers("/").permitAll()
 				.antMatchers("/register").permitAll()
+				.antMatchers("/contact").permitAll()
 				.antMatchers("/about").permitAll()
+				.antMatchers("/delivery").permitAll()
+				.antMatchers("/advertising").permitAll()
+				.antMatchers("/affiliates").permitAll()
+				.antMatchers("/checkout_success").permitAll()
+				.antMatchers("/exchanges_returns").permitAll()
+				.antMatchers("/faq").permitAll()
+
+
+
+
 				.antMatchers("/every-users").permitAll()
 				.antMatchers("/shop_all").permitAll()
 				.antMatchers(HttpMethod.POST, "/user/new").permitAll()
