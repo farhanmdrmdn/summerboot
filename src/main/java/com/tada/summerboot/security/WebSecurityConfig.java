@@ -60,8 +60,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/checkout_success").permitAll()
 				.antMatchers("/exchanges_returns").permitAll()
 				.antMatchers("/faq").permitAll()
-
-
+				.antMatchers("/payment").permitAll()
+				.antMatchers("/privacy_policy").permitAll()
+				.antMatchers("/shopping_cart").permitAll()
+				.antMatchers("/terms_and_conditions").permitAll()
 
 
 				.antMatchers("/every-users").permitAll()

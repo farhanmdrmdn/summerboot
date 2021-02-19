@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Shopping Cart</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="assets/modern-business.css" rel="stylesheet" />
+  <script src="assets/main.js"></script>
+
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <div th:insert="fragments/navbar.html :: navbar"> </div>
+
+  <header>
+    <div class="jumbotron jumbotron_cart jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4" style="color:white; text-shadow: 1px 1px 1px black;">Home</h1>
+          <p class="lead" style="color:white; text-shadow: 1px 1px 1px black;">will love its present</p>
+        </div>
+      </div>
+  </header>
+
+  <!-- Page Content -->
+  <div class="container cartheader">
+
+    <h2 style="text-shadow: 1px 1px 1px grey;">Your Cart</h2>
+
+
+
+
+
+<!-- Call to Action Section -->
+    <div class="product-container">
+
+        <div class="product-header">
+            <h6 class="product-title">Product</h6>
+            <h6 class="price">Price</h6>
+            <h6 class="quantity">Quantity</h6>
+            <h6 class="total">Total</h6>
+        </div>
+
+      <!-- Cart Listing Content -->
+        <div class="productsIncart"></div>
+ 
+
+        </div>
+
+    </div>
+
+  <!-- Footer -->
+  <div th:insert="fragments/footer.html :: footer"> </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+</body>
+
+</html>
