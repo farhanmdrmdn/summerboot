@@ -12,6 +12,8 @@ public class MvcConfig implements WebMvcConfigurer {
 		registry.addViewController("/error").setViewName("error");
 		registry.addViewController("/product").setViewName("product");
 		registry.addViewController("/every").setViewName("shop_all");
+		registry.addViewController("/about").setViewName("about");
+
 
 		//Just to demo fragments
 		registry.addViewController("/fragment1").setViewName("fragment1");

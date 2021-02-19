@@ -20,7 +20,7 @@ public class UserController {
         System.out.println(newUser);
         user_service_implementation.createUser(newUser);
         System.out.println("DID IT REACH HERE????");
-        return "redirect:/every-users";
+        return "redirect:/";
     }
 
     @GetMapping(path="/login")

@@ -11,7 +11,6 @@
     <div th:fragment="login">
 
         <div sec:authorize="isAuthenticated()">
-<!--            <h4 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h4>-->
             <form th:action="@{/logout}" method="post">
                 <input type="submit" value="Sign Out" class="nav-link" style="background-color: transparent; border: 0px;"/>
             </form>

@@ -3,56 +3,228 @@
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Home</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="assets/modern-business.css" rel="stylesheet" />
+    <script src="assets/main.js"></script>
+
 </head>
+
 <body>
-    <h1>Index</h1>
-    <p>Index.html will be reflected at `http://localhost:8080/` (the root directory)</p>
-    <p>Change the html file at `main/resources/static/index.html`</p>
+<!-- Navigation -->
+<div th:insert="fragments/navbar.html :: navbar"> </div>
 
-    <h1>Quick links</h1>
-    <ul>
-        <h3>General</h3>
-        <li><a href="/fragment1">fragments</a></li>
-        <li><a href="/login">login</a></li>
+<header>
+    <div id="carouselExampleIndicators" class="carousel slide padding-top" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <!-- Slide One - Set the background image for this slide in the line below -->
+            <div class="carousel-item active" style="
+              background-image: url('https://images.pexels.com/photos/276534/pexels-photo-276534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+            ">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Lounge Chair</h3>
+                    <p>Weather-resistant, 100% egyptian cotton</p>
+                </div>
+            </div>
+            <!-- Slide Two - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="
+              background-image: url('https://images.pexels.com/photos/545012/pexels-photo-545012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+            ">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Bed Frame</h3>
+                    <p>High-quality teak wood</p>
+                </div>
+            </div>
+            <!-- Slide Three - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="
+              background-image: url('https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+            ">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Leather Sofa</h3>
+                    <p>100% cowhide leather</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</header>
 
-        <h3>✍️ Posts</h3>
-        <li><a href="/post">post</a></li>
-        <li><a href="/every-posts">every posts</a></li>
-        <li><a href="/individual-post">every posts by a single user</a></li>
-        <li><a href="/post-image">post with image</a></li>
+<!-- Page Content -->
+<div class="container">
+    <h1 class="my-4" style="text-shadow: 1px 1px 2px grey;">CDF</h1>
 
-        <h3>👨‍👩‍👦 Users</h3>
-        <li><a href="/register">user registration</a></li>
-        <li><a href="/every-users">every users</a></li>
+    <!-- Marketing Icons Section -->
+    <div class="row shadow p-3 mb-5 bg-white rounded">
+        <div class="col-lg-4 mb-4">
+            <div class="card h-70 border-0">
+                <a href="delivery.html"> <img class="card-img-top"
+                                              src="assets/img/delivery.jpeg"
+                                              height="310" alt="" style="z-index: 0;"></a>
+                <div class="card-body" style="margin-top: -80px; color:white; z-index: 1;">
+                    <h5>Free Delivery</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card h-70 border-0">
+                <a href="faq.html"> <img class="card-img-top"
+                                         src="assets/img/phone.jpeg"
+                                         height="310" alt="" /></a>
+                <div class="card-body" style="margin-top: -80px; color:white; z-index: 1;">
+                    <h5>FAQs</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card h-70 border-0">
+                <a href="exchanges_returns.html"> <img class="card-img-top"
+                                                       src="assets/img/returns.jpeg"
+                                                       height="310" alt="" /></a>
+                <div class="card-body" style="margin-top: -80px; color:white; z-index: 1;">
+                    <h5>Fuss-free Returns</h5>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <h3>📦 Products</h3>
-        <li><a href="/product-image">product with image</a></li>
-        <li><a href="/product">product</a></li>
-        <li><a href="/every-products">every products</a></li>
-        <li><a href="/individual">every products by current user</a></li>
+    <!-- Portfolio Section -->
+    <h2 style="padding-bottom: 15px; text-shadow: 1px 1px 2px grey;">New Arrivals</h2>
 
-    </ul>
+    <div class="row">
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100 border-0 rounded-0">
+                <a href="shop_all.html"><img class="card-img-top"
+                                             src="https://images.unsplash.com/photo-1601334168575-faa1f2640cff?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+                                             height="450" alt="" /></a>
+                <div class="card-body" style="margin-top: -80px; color:white;">
+                    <h4 class="card-title">Suede Sofa</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100 border-0">
+                <a href="shop_all.html"><img class="card-img-top"
+                                             src="https://images.unsplash.com/photo-1540551079-b1236c0cd8ef?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=668&q=80"
+                                             height="450" alt="" /></a>
+                <div class="card-body" style="margin-top: -80px; color:white;">
+                    <h4 class="card-title">Laundry Basket</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100 border-0">
+                <a href="shop_all.html"><img class="card-img-top"
+                                             src="https://images.unsplash.com/photo-1601334168768-74d5d3ec9936?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80"
+                                             height="450" alt="" /></a>
+                <div class="card-body" style="margin-top: -80px; color:white;">
+                    <h4 class="card-title">Wool Throwover</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100 border-0">
+                <a href="shop_all.html"><img class="card-img-top"
+                                             src="https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"
+                                             height="450" alt="" /></a>
+                <div class="card-body" style="margin-top: -80px; color:white;">
+                    <h4 class="card-title">Kitchen Sanitisers</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100 border-0">
+                <a href="shop_all.html"><img class="card-img-top"
+                                             src="https://images.unsplash.com/photo-1526827826797-7b05204a22ef?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"
+                                             height="450" alt="" /></a>
+                <div class="card-body" style="margin-top: -80px; color:white;">
+                    <h4 class="card-title">Wall Shelves</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100 border-0">
+                <a href="shop_all.html"><img class="card-img-top"
+                                             src="https://images.unsplash.com/photo-1514846160150-2cfb150b48ea?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=678&q=80"
+                                             height="450" alt="" /></a>
+                <div class="card-body" style="margin-top: -80px; color:white;">
+                    <h4 class="card-title">Floor Lamp</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
 
-    <div th:insert="fragments/login.html :: login"> </div>
+    <!-- Features Section -->
+    <div class="row">
+        <div class="col-lg-6" style="padding-top: 40px;">
+            <h2 style="text-shadow: 1px 1px 2px grey;">The CDF principle</h2>
+            <p>The CDF promise includes:</p>
+            <ul>
+                <li>Free local delivery</li>
+                <li>No-fuss returns</li>
+                <li>Amazing service</li>
+                <li>Top-notch quality</li>
+                <li>Affordable prices</li>
+            </ul>
+            <p>
+                We deliver the best, and only the best. Your one-stop shop for all things related to home. Designed and built for both function and aesthetic. Every detail is created with the modern lifestyle in mind.
+            </p>
+        </div>
+        <div class="col-lg-6" style="padding-top: 30px; padding-bottom:30px;">
+            <img class="img-fluid"
+                 src="https://images.unsplash.com/photo-1519643225200-94e79e383724?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1655&q=80"
+                 height="500" alt="" />
+        </div>
+    </div>
+    <!-- /.row -->
 
+    <hr />
 
-<!--    <div sec:authorize="isAuthenticated()">-->
-<!--        <h4 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h4>-->
+    <!-- Call to Action Section -->
+    <div class="row mb-4 calltoaction">
+        <div class="col-md-8">
+            <p>
+                Find everything you need for your home, here at CDF.
+                From the big things in life, to the little joys.
+                We hope you find inspiration and comfort from the minute you wake, to when your head touches your pillow.
+                May home be a sanctuary and escape from real life.
+                We are here for you.
+            </p>
+        </div>
+        <div class="col-md-4">
+            <a class="btn btn-lg btn-secondary btn-block" href="shop_all.html" style="background-color: black; border-radius: 0; margin-top: 10px;">Shop New</a>
+        </div>
+    </div>
+</div>
+<!-- /.container -->
 
-<!--        <form th:action="@{/logout}" method="post">-->
-<!--            <input type="submit" value="Sign Out"/>-->
-<!--        </form>-->
-<!--    </div>-->
+<!-- Footer -->
+<div th:insert="fragments/footer.html :: footer"> </div>
 
-
-<!--    <div sec:authorize="isAnonymous()">-->
-<!--        <p>Not logged in <br>-->
-<!--            <a href="/login">try logging in</a>-->
-<!--        </p>-->
-<!--    </div>-->
-
-
+<!-- Bootstrap core JavaScript -->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

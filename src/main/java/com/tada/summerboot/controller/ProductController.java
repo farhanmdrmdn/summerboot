@@ -32,6 +32,14 @@ public class ProductController {
 
     private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
 
+//    @GetMapping(value="/about") // it will be set to be /product
+//    public String displayAbout(Model model){
+//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//        User user = user_service_implementation.current_user(auth.getName());
+//        model.addAttribute("user", user);
+//        return "about";
+//    }
+
     @GetMapping(value="products_admin") // it will be set to be /product
     public String displayProductsAdmin(Model model){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();

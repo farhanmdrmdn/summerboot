@@ -6,6 +6,7 @@ import com.tada.summerboot.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -50,7 +51,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		// DO NOT EDIT
 		http.authorizeRequests()
 				.antMatchers("/").permitAll()
-//				.antMatchers("/register").permitAll()
+				.antMatchers("/register").permitAll()
+				.antMatchers("/about").permitAll()
+				.antMatchers("/every-users").permitAll()
+				.antMatchers("/shop_all").permitAll()
+				.antMatchers(HttpMethod.POST, "/user/new").permitAll()
 				.antMatchers("/product").hasRole("ADMIN")
 				.anyRequest()
 				.authenticated().and().formLogin().loginPage("/login").permitAll().successHandler(successHandler).and()
