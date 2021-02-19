@@ -67,7 +67,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 				.antMatchers("/every-users").permitAll()
-				.antMatchers("/shop_all").permitAll()
+				.antMatchers("/every").permitAll()
 				.antMatchers(HttpMethod.POST, "/user/new").permitAll()
 				.antMatchers("/product").hasRole("ADMIN")
 				.anyRequest()
