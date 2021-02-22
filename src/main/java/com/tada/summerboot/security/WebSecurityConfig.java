@@ -35,10 +35,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		// do not authenticate these APIs
 		web.ignoring()
 				.antMatchers("/assets/**")
+//				.antMatchers("/contact.html")
 
 				.antMatchers("/css/**")
 				.antMatchers("/js/**")
 				.antMatchers("/images/**")
+				.antMatchers("/every-users")
+
 				.antMatchers("/user-photos/**")
 				.antMatchers("/products/**")
 				.antMatchers("/posts/**")
@@ -71,21 +74,37 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.anyRequest()
 				.authenticated().and().formLogin().loginPage("/login").permitAll().successHandler(successHandler).and()
 				.logout().permitAll();
+				.antMatchers(HttpMethod.POST, "/user/new").permitAll()
+				.antMatchers("/product").hasRole("ADMIN")
+				.anyRequest().authenticated()
+				.and()
+			.formLogin()
+				.loginPage("/login")
+				.permitAll()
+				.successHandler(successHandler)
+				.and()
+			.logout()
+				.logoutSuccessUrl("/") //Set the url after you logout
+				.permitAll();
 	}
 
-	@Bean
-	@Override
-	public UserDetailsService userDetailsService() {
 
-		// Get all the users in database
+
+	// This method will only be loaded once when you start the server
+	// It assumes you should have users in your database
+	// Read more https://www.javadevjournal.com/spring/spring-security-userdetailsservice/
+
+	@Bean
+	@
+
 		// Use the service instead of repo.
 		List<com.tada.summerboot.model.User> users = user_service_implementation.getAllUsers();
 
+	// 
 		// Prepare an ArrayList for the InMemoryUserDetailsManager method at the end of
 		// this function
 		ArrayList<UserDetails> list = new ArrayList<UserDetails>();
 
-		// Iterate (go through one by one) and build a UserDetails for this app
 		for (int i = 0; i < users.size(); i++) {
 
 			// Create a UserDetails instance but set it based on the user in database
@@ -95,12 +114,78 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			list.add(user);
 		}
 
-		// Have at least one admin user for developer to login
-		UserDetails admin = User.withDefaultPasswordEncoder().username("admin").password("admin").roles("ADMIN")
-				.build();
-		list.add(admin);
+		list = adding_super_user(list);
 
-		System.out.println(list);
 		return new InMemoryUserDetailsManager(list);
 	}
+
+
+	//        UNCOMMENT SNIPPET #1
+	// Remember to comment out the userDetailsService Above.
+
+//	@Bean
+//	@Override
+//	public UserDetailsService userDetailsService() {
+//		// Get all the users in database
+//		// Use the service instead of repo.
+//		List<com.tada.summerboot.model.User> users = user_service_implementation.getAllUsers();
+//
+//		// Prepare an ArrayList for the InMemoryUserDetailsManager method at the end of this function
+//		ArrayList<UserDetails> list = new ArrayList<UserDetails>();
+//
+
+	/	 rs.get(i).getUserType() != null){ // check if UserType is null
+//				list = set_user_type(list, users.get(i));
+
+	// 			//
+	// 		} else 
+	// 			// Create a UserDetails instance but set it b
+	// 		UserDetails user = User.withDe
+	// 				.username(users.get(i).getUsern
+	// 				.password(users.get(i).getPassword())
+	// 
+	//
+	// 				.build();
+	// 
+	// 
+	//
+	// 		list.add(user);
+	// 	}
+	// 
+	// 
+	//
+	// Have at least one admin user for developer to login
+	// eturn ne
+	// 
+	// 
+	// te ArrayList<UserDetails>  set_user_t
+	// Details user = User.withDefaultPasswo
+	// sername(this_us
+	// assword(t
+	//
+	// .build(); // This assumes that g
+	// 
+	// i
+	// r
+	//
+	 
+		p vate ArrayList<UserDetails> adding_super_user(ArrayLi
+			 erDetails admin =
+			 	
+					
+			 			.password("admin") 
+	// 
+			 		.roles("ADMIN")
+			 .build();
+	 
+			 .add(admin);
+			 rn list;
+		}
+	 
+	 
+	 
+
+
 }
+
+
