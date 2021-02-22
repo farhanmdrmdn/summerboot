@@ -5,54 +5,249 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <style>
+        /*Demonstrate passing array into fragment*/
+        .style1{
+            color: red;
+            font-size: 50px;
+        }
+
+        .style2{
+            color: blue;
+            font-size: 30px;
+        }
+
+        .style3{
+            color: green;
+            font-size: 20px;
+
+        }
+    </style>
 </head>
 <body>
-    <h1>Index</h1>
-    <p>Index.html will be reflected at `http://localhost:8080/` (the root directory)</p>
-    <p>Change the html file at `main/resources/static/index.html`</p>
+<h1>Index</h1>
+<p>Index.html will be reflected at `http://localhost:8080/` (the root directory)</p>
+<p>Change the html file at `main/resources/static/index.html`</p>
 
-    <h1>Quick links</h1>
-    <ul>
-        <h3>General</h3>
-        <li><a href="/fragment1">fragments</a></li>
-        <li><a href="/login">login</a></li>
+<title>Home</title>
 
-        <h3>✍️ Posts</h3>
-        <li><a href="/post">post</a></li>
-        <li><a href="/every-posts">every posts</a></li>
-        <li><a href="/individual-post">every posts by a single user</a></li>
-        <li><a href="/post-image">post with image</a></li>
+<h3>✍️ Posts</h3>
+<li><a href="/post">post</a></li>
+<li><a href="/post-image">post with image</a></li>
+<li><a href="/every-posts">every posts</a></li>
+<li><a href="/individual-post">every posts by a single user</a></li>
 
-        <h3>👨‍👩‍👦 Users</h3>
-        <li><a href="/register">user registration</a></li>
-        <li><a href="/every-users">every users</a></li>
+<!-- Custom styles for this template -->
+<link href="assets/modern-business.css" rel="stylesheet" />
+<script src="assets/main.js"></script>
 
-        <h3>📦 Products</h3>
-        <li><a href="/product-image">product with image</a></li>
-        <li><a href="/product">product</a></li>
-        <li><a href="/every-products">every products</a></li>
-        <li><a href="/individual">every products by current user</a></li>
+<h3>📦 Products</h3>
+<li><a href="/product">product</a></li>
+<li><a href="/product-image">product with image</a></li>
+<li><a href="/every-products">every products</a></li>
+<li><a href="/individual">every products by a single user</a></li>
 
-    </ul>
+<!--        <h3>🙌 Extras</h3>-->
+<!--        <li><a href="/cart">Cart</a></li>-->
+<!--        <li><a href="/checkout">Checkout with stripe</a></li>-->
+<!--        <li><a href="/follow">Follow me</a></li>-->
+<!--        <li><a href="/">See an example app</a></li>-->
 
-    <div th:insert="fragments/login.html :: login"> </div>
+<!--        <h3>🙌 The Challenge</h3>-->
+<!--        <li><a href="http://github.com/ytbryan/summerboot">Summerboot source code</a></li>-->
+<!--        <li>Give the repo a star 🌟 and send me a pull request.</li>-->
+</ul>
 
+<hr>
+<div th:insert="fragments/login.html :: login"> </div>
+
+<hr>
+
+<h1><a href="/fragment-with-array">fragment and passing an array</a></h1>
+
+
+<div th:insert="fragments/fragment-with-array.html :: fragment_array('style1,style2,style3')"></div>
 
 <!--    <div sec:authorize="isAuthenticated()">-->
 <!--        <h4 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h4>-->
 
-<!--        <form th:action="@{/logout}" method="post">-->
-<!--            <input type="submit" value="Sign Out"/>-->
-<!--        </form>-->
-<!--    </div>-->
+<!-- Portfolio Section -->
+<h2 style="padding-bottom: 15px; text-shadow: 1px 1px 2px grey;">New Arrivals</h2>
 
+<div class="row">
+    <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100 border-0 rounded-0">
+            <a href="/every"><img class="card-img-top"
+                                  src="https://images.unsplash.com/photo-1601334168575-faa1f2640cff?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+                                  height="450" alt="" /></a>
+            <div class="card-body" style="margin-top: -80px; color:white;">
+                <h4 class="card-title">Suede Sofa</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100 border-0">
+            <a href="/every"><img class="card-img-top"
+                                  src="https://images.unsplash.com/photo-1540551079-b1236c0cd8ef?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=668&q=80"
+                                  height="450" alt="" /></a>
+            <div class="card-body" style="margin-top: -80px; color:white;">
+                <h4 class="card-title">Laundry Basket</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100 border-0">
+            <a href="/every"><img class="card-img-top"
+                                  src="https://images.unsplash.com/photo-1601334168768-74d5d3ec9936?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80"
+                                  height="450" alt="" /></a>
+            <div class="card-body" style="margin-top: -80px; color:white;">
+                <h4 class="card-title">Wool Throwover</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100 border-0">
+            <a href="/every"><img class="card-img-top"
+                                  src="https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"
+                                  height="450" alt="" /></a>
+            <div class="card-body" style="margin-top: -80px; color:white;">
+                <h4 class="card-title">Kitchen Sanitisers</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100 border-0">
+            <a href="/every"><img class="card-img-top"
+                                  src="https://images.unsplash.com/photo-1526827826797-7b05204a22ef?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"
+                                  height="450" alt="" /></a>
+            <div class="card-body" style="margin-top: -80px; color:white;">
+                <h4 class="card-title">Wall Shelves</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100 border-0">
+            <a href="/every"><img class="card-img-top"
+                                  src="https://images.unsplash.com/photo-1514846160150-2cfb150b48ea?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=678&q=80"
+                                  height="450" alt="" /></a>
+            <div class="card-body" style="margin-top: -80px; color:white;">
+                <h4 class="card-title">Floor Lamp</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.row -->
 
-<!--    <div sec:authorize="isAnonymous()">-->
-<!--        <p>Not logged in <br>-->
-<!--            <a href="/login">try logging in</a>-->
-<!--        </p>-->
-<!--    </div>-->
+<!-- Features Section -->
+<div class="row">
+    <div class="col-lg-6" style="padding-top: 40px;">
+        <h2 style="text-shadow: 1px 1px 2px grey;">The CDF principle</h2>
+        <p>The CDF promise includes:</p>
+        <ul>
+            <li>Free local delivery</li>
+            <li>No-fuss returns</li>
+            <li>Amazing service</li>
+            <li>Top-notch quality</li>
+            <li>Affordable prices</li>
+        </ul>
+        <p>
+            We deliver the best, and only the best. Your one-stop shop for all things related to home. Designed and built for both function and aesthetic. Every detail is created with the modern lifestyle in mind.
+        </p>
+    </div>
+    <div class="col-lg-6" style="padding-top: 30px; padding-bottom:30px;">
+        <img class="img-fluid"
+             src="https://images.unsplash.com/photo-1519643225200-94e79e383724?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1655&q=80"
+             height="500" alt="" />
+    </div>
+</div>
+<!-- /.row -->
 
+<hr />
 
+<!-- Call to Action Section -->
+<div class="row mb-4 calltoaction">
+    <div class="col-md-8">
+        <p>
+            Find everything you need for your home, here at CDF.
+            From the big things in life, to the little joys.
+            We hope you find inspiration and comfort from the minute you wake, to when your head touches your pillow.
+            May home be a sanctuary and escape from real life.
+            We are here for you.
+        </p>
+    </div>
+    <div class="col-md-4">
+        <a class="btn btn-lg btn-secondary btn-block" href="/every" style="background-color: black; border-radius: 0; margin-top: 10px;">Shop New</a>
+    </div>
+</div>
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<div th:insert="fragments/footer.html :: footer"> </div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"-->
+<!--      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Index</h1>-->
+<!--    <p>Index.html will be reflected at `http://localhost:8080/` (the root directory)</p>-->
+<!--    <p>Change the html file at `main/resources/static/index.html`</p>-->
+
+<!--    <h1>Quick links</h1>-->
+<!--    <ul>-->
+<!--        <h3>General</h3>-->
+<!--        <li><a href="/fragment1">fragments</a></li>-->
+<!--        <li><a href="/login">login</a></li>-->
+
+<!--        <h3>✍️ Posts</h3>-->
+<!--        <li><a href="/post">post</a></li>-->
+<!--        <li><a href="/every-posts">every posts</a></li>-->
+<!--        <li><a href="/individual-post">every posts by a single user</a></li>-->
+<!--        <li><a href="/post-image">post with image</a></li>-->
+
+<!--        <h3>👨‍👩‍👦 Users</h3>-->
+<!--        <li><a href="/register">user registration</a></li>-->
+<!--        <li><a href="/every-users">every users</a></li>-->
+
+<!--        <h3>📦 Products</h3>-->
+<!--        <li><a href="/product-image">product with image</a></li>-->
+<!--        <li><a href="/product">product</a></li>-->
+<!--        <li><a href="/every-products">every products</a></li>-->
+<!--        <li><a href="/individual">every products by current user</a></li>-->
+
+<!--    </ul>-->
+
+<!--    <div th:insert="fragments/login.html :: login"> </div>-->
+
+
+<!--&lt;!&ndash;    <div sec:authorize="isAuthenticated()">&ndash;&gt;-->
+<!--&lt;!&ndash;        <h4 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h4>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <form th:action="@{/logout}" method="post">&ndash;&gt;-->
+<!--&lt;!&ndash;            <input type="submit" value="Sign Out"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        </form>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;    <div sec:authorize="isAnonymous()">&ndash;&gt;-->
+<!--&lt;!&ndash;        <p>Not logged in <br>&ndash;&gt;-->
+<!--&lt;!&ndash;            <a href="/login">try logging in</a>&ndash;&gt;-->
+<!--&lt;!&ndash;        </p>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+
+
+<!--</body>-->
+<!--</html>-->
