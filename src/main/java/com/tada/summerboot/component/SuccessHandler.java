@@ -26,22 +26,22 @@ public class SuccessHandler implements AuthenticationSuccessHandler {
 //
 //
 
-//        boolean isAdmin = false;
-//        UserDetails user = (UserDetails) authentication.getPrincipal();
-//        Iterator<org.springframework.security.core.GrantedAuthority> grantedAuthorityIterator = (Iterator<GrantedAuthority>) user.getAuthorities().iterator();
-//        while (grantedAuthorityIterator.hasNext()) {
-//            if (grantedAuthorityIterator.next().getAuthority().equalsIgnoreCase("ADMIN")) {
-//                isAdmin = true;
-//            }
-//        }
-//
-//        if (isAdmin) { // if isAdmin is true == true.
-//            System.out.println("reached /admin");
-//            httpServletResponse.sendRedirect("/admin");
-//        } else { // if it is false.
-//            System.out.println("reached /");
-//            httpServletResponse.sendRedirect("/");
-//        }
+        boolean isAdmin = false;
+        UserDetails user = (UserDetails) authentication.getPrincipal();
+        Iterator<org.springframework.security.core.GrantedAuthority> grantedAuthorityIterator = (Iterator<GrantedAuthority>) user.getAuthorities().iterator();
+        while (grantedAuthorityIterator.hasNext()) {
+            if (grantedAuthorityIterator.next().getAuthority().equalsIgnoreCase("ROLE_ADMIN")) {
+                isAdmin = true;
+            }
+        }
+
+        if (isAdmin == true) { // if isAdmin is true == true.
+            System.out.println("reached /admin");
+            httpServletResponse.sendRedirect("/products_admin");
+        } else { // if it is false.
+            System.out.println("reached /");
+            httpServletResponse.sendRedirect("/");
+        }
 
 
         httpServletResponse.sendRedirect("/");

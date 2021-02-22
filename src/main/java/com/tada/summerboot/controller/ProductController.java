@@ -40,7 +40,7 @@ public class ProductController {
 //        return "about";
 //    }
 
-    @GetMapping(value="products_admin") // it will be set to be /product
+    @GetMapping(value="/products_admin") // it will be set to be /product
     public String displayProductsAdmin(Model model){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = user_service_implementation.current_user(auth.getName());
