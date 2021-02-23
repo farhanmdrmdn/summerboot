@@ -92,7 +92,7 @@ let carts = document.querySelectorAll('.add-cart');
 // "Add to cart" Function column
 for (let i = 0; i < carts.length; i++) {
     carts[i].addEventListener('click', () => {
-        alert("pressed");
+        // alert("pressed");
         cartNumbers(products[i]);
         totalCost(products[i]);
     });
