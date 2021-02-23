@@ -235,7 +235,7 @@ function displayCart() {
                                   <a class="btn btn-md btn-secondary btn-block" href="checkout_success.html">Check Out</a>
                                 </div>
                               </div>
-                        `
+                        `;
 
         removeCart();
         manageQuantity();
